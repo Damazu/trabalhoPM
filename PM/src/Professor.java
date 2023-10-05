@@ -1,14 +1,16 @@
-public class Professor {
+public class Professor extends Pessoa {
     private String especialidade;
     private float salario;
     private Minicurso turma;
 
-    public Professor(String especialidade, float salario,Minicurso turma){
+    public Professor(String especialidade, float salario, Minicurso turma){
         this.turma = turma;
         this.salario = salario;
         this.especialidade = especialidade;
 
     }
+
+
     public String getEspecialidade() {
         return especialidade;
     }
@@ -31,6 +33,6 @@ public class Professor {
 
 
     public Profissional cadastropProfissional(){
-        return new Profissional(especialidade, salario);
+        return new Profissional(especialidade, null,null);
     }
 }

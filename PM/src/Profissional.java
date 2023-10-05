@@ -1,12 +1,15 @@
-public class Profissional {
+public class Profissional extends Pessoa{
     private String cargo;
     private Float salario;
 
 
-    public Profissional(String cargo,Float salario){
+    public Profissional(String cargo,Float salario,String nome,String CPF){
+        super(nome, CPF);
         this.cargo = cargo;
         this.salario = salario;
+        
     }
+    
     public String getCargo() {
         return cargo;
     }
@@ -21,7 +24,9 @@ public class Profissional {
     }
 
         public Profissional cadastropProfissional(){
-            return new Profissional(cargo, salario);
+            String nome;
+            String CPF;
+            return new Profissional(cargo, salario, nome, CPF);
         }
 
 

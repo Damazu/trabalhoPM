@@ -14,34 +14,35 @@ public class Estudante extends Pessoa{
         this.curso = curso;
     }
 
-    Scanner sc = new Scanner(System.in);
 
     public Estudante matricularEstudante(){
+        Scanner sc = new Scanner(System.in);
+
         System.out.println("Nome: ");
         String nome = sc.nextLine();
 
         System.out.println("CPF: ");
         String cpf = sc.nextLine();
 
-        nota = 0;
-
         System.out.println("Matricula: ");
         int matricula = sc.nextInt();
 
+        nota = 0;
         curso = null;
 
-        return new Estudante(nome, cpf, nota, matricula, curso);
+        sc.close();
 
-        
+        return new Estudante(nome, cpf, nota, matricula, curso);
+    
     }
 
     public void exibirInformacoes() {
         System.out.println("Informações do Estudante:");
-        System.out.println("Nome: " + nome);
-        System.out.println("CPF: " + cpf);
-        System.out.println("Nota: " + nota);
-        System.out.println("Matrícula: " + matricula);
-        System.out.println("Curso: " + curso);
+        System.out.println("Nome: " + getNome());
+        System.out.println("CPF: " + getCPF());
+        System.out.println("Nota: " + getnota());
+        System.out.println("Matrícula: " + getmatricula());
+        System.out.println("Curso: " + getcurso());
     }
 
     //Métodos getters e setters (para acessar e modificar os campos)

@@ -1,13 +1,14 @@
+import java.util.Scanner;
+
 public class Professor extends Pessoa {
     private String especialidade;
     private float salario;
     private Minicurso turma;
 
-    public Professor(String especialidade, float salario, Minicurso turma){
-        this.turma = turma;
+    public Professor(String nome, String CPF, String especialidade, float salario){
+        super(nome,CPF);
         this.salario = salario;
         this.especialidade = especialidade;
-
     }
 
 
@@ -32,7 +33,22 @@ public class Professor extends Pessoa {
 
 
 
-    public Profissional cadastropProfissional(){
-        return new Profissional(especialidade, null,null);
+    public Professor cadastroProfessor(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Nome: ");
+        String nome = sc.nextLine();
+
+        System.out.println("CPF: ");
+        String CPF = sc.nextLine();
+
+        System.out.println("especialidade: ");
+        String especialidade = sc.nextLine();
+
+        salario = 1800;
+
+        sc.close();
+        
+        return new Professor(nome, CPF, especialidade, salario);
     }
 }

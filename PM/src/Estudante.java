@@ -7,10 +7,8 @@ public class Estudante extends Pessoa{
     private int matricula;
     private Minicurso curso;
 
-    public Estudante(float nota, int matricula, Minicurso curso) {
-        super(nome,cpf);
-        this.nome = nome;
-        this.cpf = cpf;
+    public Estudante(String nome, String CPF, float nota, int matricula, Minicurso curso) {
+        super(nome,CPF);
         this.nota = nota;
         this.matricula = matricula;
         this.curso = curso;
@@ -25,7 +23,25 @@ public class Estudante extends Pessoa{
         System.out.println("CPF: ");
         String cpf = sc.nextLine();
 
+        nota = 0;
+
+        System.out.println("Matricula: ");
+        int matricula = sc.nextInt();
+
+        curso = null;
+
         return new Estudante(nome, cpf, nota, matricula, curso);
+
+        
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("Informações do Estudante:");
+        System.out.println("Nome: " + nome);
+        System.out.println("CPF: " + cpf);
+        System.out.println("Nota: " + nota);
+        System.out.println("Matrícula: " + matricula);
+        System.out.println("Curso: " + curso);
     }
 
     //Métodos getters e setters (para acessar e modificar os campos)

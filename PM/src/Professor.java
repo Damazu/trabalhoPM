@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Professor extends Pessoa {
     private String especialidade;
@@ -11,6 +13,38 @@ public class Professor extends Pessoa {
         this.especialidade = especialidade;
     }
 
+    List<Professor> professores = new ArrayList<Professor>();
+
+    public Professor cadastroProfessor(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Nome: ");
+        String nome = sc.nextLine();
+
+        System.out.println("CPF: ");
+        String CPF = sc.nextLine();
+
+        System.out.println("especialidade: ");
+        String especialidade = sc.nextLine();
+
+        salario = 1800;
+
+        Professor professor = new Professor(nome, CPF, especialidade, salario);
+        professores.add(professor);
+        
+        return professor;
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("Informações dos Profesores: ");
+
+        for (Professor professor : professores) {
+            System.out.println("Nome: " + professor.getNome());
+            System.out.println("CPF: " + professor.getCPF());
+            System.out.println("Especialidade: " + professor.getEspecialidade());
+            System.out.println("Salario: " + professor.getSalario());
+        }
+    }
 
     public String getEspecialidade() {
         return especialidade;
@@ -31,24 +65,4 @@ public class Professor extends Pessoa {
         this.turma = turma;
     }
 
-
-
-    public Professor cadastroProfessor(){
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Nome: ");
-        String nome = sc.nextLine();
-
-        System.out.println("CPF: ");
-        String CPF = sc.nextLine();
-
-        System.out.println("especialidade: ");
-        String especialidade = sc.nextLine();
-
-        salario = 1800;
-
-        sc.close();
-        
-        return new Professor(nome, CPF, especialidade, salario);
-    }
 }

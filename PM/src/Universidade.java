@@ -1,15 +1,31 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Universidade extends Instituição{
 
     private List<Sala> salas;
     private List<Professor> professores;
 
-    public Universidade(String nome, String CNPJ){
+
+    private static Universidade universidade;
+    private Universidade(String nome, String CNPJ){
         super(nome, CNPJ);
         this.salas = new ArrayList<>();
         this.professores = new ArrayList<>();
+    }
+
+    public static Universidade cadastropUniversidade(){
+            if (universidade == null) {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Digite o nome da universidade:");
+                String nome = sc.next();
+                System.out.println("Digite o CNPJ da universidade:");
+                String cnpj = sc.next();
+                universidade = new Universidade(nome, cnpj);
+                sc.close();
+            }
+            return universidade;
     }
 
     public List<Professor> getProfessores() {
@@ -18,7 +34,7 @@ public class Universidade extends Instituição{
     public void setProfessores(List<Professor> professores) {
         this.professores = professores;
     }
-    
+
     public List<Sala> getSalas() {
         return salas;
     }
@@ -26,9 +42,5 @@ public class Universidade extends Instituição{
         this.salas = salas;
     }
 
-    public Universidade cadastropUniversidade(){
-        String nome = "";
-        String CNPJ = "";
-        return new Universidade(nome,CNPJ);
-    }
+    
 }

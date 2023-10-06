@@ -1,6 +1,6 @@
 import java.util.Date;
 import java.sql.Time;
-import java.util.ArrayList;
+
 import java.util.List;
 
 class Minicurso {
@@ -8,14 +8,12 @@ class Minicurso {
     private Time horaInicio;
     private Time horaFim;
     private List<Pessoa> participantes;
-    private Sala sala;
 
     public Minicurso(Date data, Time horaInicio, Time horaFim, Sala sala) {
         this.data = data;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
-        this.participantes = new ArrayList<>();
-        this.sala = sala;
+
     }
 
     // Métodos para adicionar e remover participantes

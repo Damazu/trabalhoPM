@@ -28,6 +28,9 @@ public class App {
                 
                 apresentacao.agendarApresentação();
 
+            case 9:
+            Universidade universidade = Universidade.cadastropUniversidade();
+            break;
             default:
                 sc.close();
                 break;

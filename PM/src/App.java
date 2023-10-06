@@ -30,6 +30,7 @@ public class App {
 
             case 9:
             Universidade universidade = Universidade.cadastropUniversidade();
+            System.out.println("Nome da universidade: " + universidade.getNome());
             break;
             default:
                 sc.close();

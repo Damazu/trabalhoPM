@@ -13,6 +13,7 @@ public class Professor extends Pessoa {
         this.especialidade = especialidade;
     }
 
+    static List<SessãoTecnica> sessoes = new ArrayList<SessãoTecnica>();
     static List<Professor> professores = new ArrayList<Professor>();
 
     public Professor cadastroProfessor(){

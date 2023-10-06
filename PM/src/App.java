@@ -22,7 +22,12 @@ public class App {
                 professor.cadastroProfessor();
                 professor.exibirInformacoes();
                 break;
+
+            case 3:
+                Apresentação apresentacao = new Apresentação(null);
                 
+                apresentacao.agendarApresentação();
+
             default:
                 sc.close();
                 break;

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Trabalho {
     private int id;
     private String titulo;
@@ -7,6 +9,25 @@ public class Trabalho {
         this.titulo = titulo;
         this.resumo = resumo;
     }
+
+    public static Trabalho realizarTrabalho(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Titulo: ");
+
+        String titulo = sc.nextLine();
+        String resumo = sc.nextLine();
+
+        return new Trabalho(titulo, resumo);
+    }
+
+    // public static void notaEstudante(nomeEstudante){
+    //     Scanner sc = new Scanner(System.in);
+
+    //     System.out.println("Digite a nota do trabalho: ");
+    //     Float nota = sc.nextFloat();
+
+    // }
 
     // Métodos getters e setters (para acessar e modificar os campos)
     public int getId() {

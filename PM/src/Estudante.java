@@ -7,15 +7,16 @@ public class Estudante extends Pessoa{
     private int matricula;
     private Minicurso curso;
 
-    public Estudante(String nome, String CPF, float nota, int matricula, Minicurso curso) {
+    private Estudante(String nome, String CPF, float nota, int matricula) {
         super(nome,CPF);
         this.nota = nota;
         this.matricula = matricula;
-        this.curso = curso;
+        // this.curso = curso;
     }
 
 
-    public Estudante matricularEstudante(){
+
+    public static Estudante matricularEstudante(int nota){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Nome: ");
@@ -27,12 +28,7 @@ public class Estudante extends Pessoa{
         System.out.println("Matricula: ");
         int matricula = sc.nextInt();
 
-        nota = 0;
-        curso = null;
-
-        sc.close();
-
-        return new Estudante(nome, cpf, nota, matricula, curso);
+        return new Estudante(nome, cpf, nota, matricula);
     
     }
 

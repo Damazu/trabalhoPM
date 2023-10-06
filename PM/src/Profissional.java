@@ -24,8 +24,8 @@ public class Profissional extends Pessoa{
     }
 
         public Profissional cadastropProfissional(){
-            String nome;
-            String CPF;
+            String nome = "";
+            String CPF = "";
             return new Profissional(cargo, salario, nome, CPF);
         }
 

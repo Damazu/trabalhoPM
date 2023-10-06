@@ -7,7 +7,6 @@ public class Profissional extends Pessoa{
         super(nome, CPF);
         this.cargo = cargo;
         this.salario = salario;
-        
     }
     
     public String getCargo() {

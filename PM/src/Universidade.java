@@ -18,6 +18,7 @@ public class Universidade extends Instituição{
     public void setProfessores(List<Professor> professores) {
         this.professores = professores;
     }
+    
     public List<Sala> getSalas() {
         return salas;
     }

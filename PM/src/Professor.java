@@ -13,7 +13,7 @@ public class Professor extends Pessoa {
         this.especialidade = especialidade;
     }
 
-    List<Professor> professores = new ArrayList<Professor>();
+    static List<Professor> professores = new ArrayList<Professor>();
 
     public Professor cadastroProfessor(){
         Scanner sc = new Scanner(System.in);

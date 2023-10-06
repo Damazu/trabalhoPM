@@ -8,7 +8,7 @@ public class Estudante extends Pessoa {
     private int matricula;
     private Minicurso curso;
 
-    List<Estudante> estudantes = new ArrayList<Estudante>();
+    static List<Estudante> estudantes = new ArrayList<Estudante>();
 
     public Estudante(String nome, String CPF, float nota, int matricula) {
         super(nome, CPF);
@@ -37,7 +37,7 @@ public class Estudante extends Pessoa {
 
         Estudante estudante = new Estudante(nome, cpf, nota, matricula);
         estudantes.add(estudante);
-        
+
         return estudante;
     }
 

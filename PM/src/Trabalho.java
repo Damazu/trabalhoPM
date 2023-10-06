@@ -6,25 +6,26 @@ public class Trabalho {
     private String resumo;
     private Professor professor;
 
-    public Trabalho(String titulo, String resumo,Professor professor){
+    public Trabalho(String titulo, String resumo, Professor professor){
         this.titulo = titulo;
         this.resumo = resumo;
         this.professor = professor;
     }
 
-    public Trabalho realizarTrabalho(){
-        return new Trabalho(titulo, resumo, professor);
-    }
 
     public static Trabalho realizarTrabalho(){
         Scanner sc = new Scanner(System.in);
+        Professor professor = new Professor("", "", "", 0);
+        
+        professor.getNome();
 
         System.out.println("Titulo: ");
-
         String titulo = sc.nextLine();
+
+        System.out.println("Resumo: ");
         String resumo = sc.nextLine();
 
-        return new Trabalho(titulo, resumo);
+        return new Trabalho(titulo, resumo, professor);
     }
 
     // public static void notaEstudante(nomeEstudante){

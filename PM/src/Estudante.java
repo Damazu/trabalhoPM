@@ -1,5 +1,4 @@
-import java.sql.Time;
-import java.util.Date;
+
 import java.util.Scanner;
 
 public class Estudante extends Pessoa{
@@ -14,10 +13,7 @@ public class Estudante extends Pessoa{
         // this.curso = curso;
     }
 
-
-
-    public static Estudante matricularEstudante(int nota){
-        Scanner sc = new Scanner(System.in);
+    public static Estudante matricularEstudante(int nota, Scanner sc){
 
         System.out.println("Nome: ");
         String nome = sc.nextLine();

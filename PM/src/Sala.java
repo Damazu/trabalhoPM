@@ -2,7 +2,6 @@ public class Sala {
     private int codigo;
     private int idPredio;
 
-
     private Sala(int codigo, int idPredio){
         this.codigo = codigo;
         this.idPredio = idPredio;

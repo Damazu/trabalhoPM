@@ -23,11 +23,10 @@ public class Profissional extends Pessoa{
         this.salario = salario;
     }
 
-        public Profissional cadastropProfissional(){
-            String nome = "";
-            String CPF = "";
-            return new Profissional(cargo, salario, nome, CPF);
-        }
-
+    public Profissional cadastropProfissional(){
+        String nome = "";
+        String CPF = "";
+        return new Profissional(cargo, salario, nome, CPF);
+    }
 
 }

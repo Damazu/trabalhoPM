@@ -8,17 +8,23 @@ public class Estudante extends Pessoa {
     private int matricula;
     private Minicurso curso;
 
-    static List<Estudante> estudantes = new ArrayList<Estudante>();
+    private static Estudante estudante = null; // Instância única
+    private static List<Estudante> estudantes = new ArrayList<Estudante>();
 
-    public Estudante(String nome, String CPF, float nota, int matricula) {
+    private Estudante(String nome, String CPF, float nota, int matricula) {
         super(nome, CPF);
         this.nota = nota;
         this.matricula = matricula;
-        // this.curso = curso;
     }
 
-    public Estudante matricularEstudante() {
+    public static Estudante getestudante() {
+        if (estudante == null) {
+            estudante = new Estudante("", "", 0, 0);
+        }
+        return estudante;
+    }
 
+    public void matricularEstudante() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Nome: ");
@@ -37,8 +43,6 @@ public class Estudante extends Pessoa {
 
         Estudante estudante = new Estudante(nome, cpf, nota, matricula);
         estudantes.add(estudante);
-
-        return estudante;
     }
 
     public void exibirInformacoes() {
@@ -78,5 +82,4 @@ public class Estudante extends Pessoa {
     public void setCurso(Minicurso curso) {
         this.curso = curso;
     }
-
 }

@@ -10,32 +10,32 @@ public class App {
 
         switch (value) {
             case 1:
-                Estudante estudante = new Estudante("", "", 0, 0);
+                Estudante estudante = Estudante.getestudante(); // Obter a instância única
 
                 estudante.matricularEstudante();
                 estudante.exibirInformacoes();
                 break;
 
             case 2:
-                Professor professor = new Professor("", "", "", 0);
+                Professor professor = Professor.cadastroprofessor();
 
-                professor.cadastroProfessor();
                 professor.exibirInformacoes();
                 break;
 
             case 3:
-                Apresentação apresentacao = new Apresentação(null);
+                Apresentação apresentação = new Apresentação(null);
                 
-                apresentacao.agendarApresentação();
+                apresentação.agendarApresentação();
+                break;
 
             case 9:
-            Universidade universidade = Universidade.cadastropUniversidade();
-            System.out.println("Nome da universidade: " + universidade.getNome());
-            break;
+                Universidade universidade = Universidade.cadastropUniversidade();
+                System.out.println("Nome da universidade: " + universidade.getNome());
+                break;
+
             default:
                 sc.close();
                 break;
         }
-
     }
 }

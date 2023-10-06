@@ -7,6 +7,9 @@ public class Apresentação {
         this.horaApresentação = horaAprensetação;
     }
     
+    public void ApresentaçãoTrabalho(){
+        
+    }
     
     public Time getHoraApresentação() {
         return horaApresentação;

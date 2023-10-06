@@ -11,6 +11,9 @@ public class App {
                 Estudante estudante = Estudante.matricularEstudante(0, sc);
                 System.out.println("Nome: " + estudante.getNome());
             break;
+        case 2:
+        Universidade universidade = Universidade.cadastropUniversidade();
+        break;
        
         default:
             sc.close();

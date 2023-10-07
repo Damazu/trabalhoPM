@@ -45,11 +45,11 @@ public class App {
             }
 
             System.out.println("\nPressione Enter para voltar ao menu...");
-               sc.nextLine();  // Limpar o buffer do scanner
-               sc.nextLine();  // Aguardar pressionar Enter para continuar
+            sc.nextLine(); // Limpar o buffer do scanner
+            sc.nextLine(); // Aguardar pressionar Enter para continuar
 
-               // Limpar a tela
-               clearScreen();
+            // Limpar a tela
+            clearScreen();
         }
     }
 

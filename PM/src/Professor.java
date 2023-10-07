@@ -42,12 +42,14 @@ public class Professor extends Pessoa {
     public void exibirInformacoes() {
         System.out.println("Informações dos Professores: ");
 
+        System.out.println("--------------------------------");
         for (Professor professor : professores) {
             System.out.println("Nome: " + professor.getNome());
             System.out.println("CPF: " + professor.getCPF());
             System.out.println("Especialidade: " + professor.getEspecialidade());
             System.out.println("Salario: " + professor.getSalario());
         }
+        System.out.println("--------------------------------");
     }
 
     public String getEspecialidade() {

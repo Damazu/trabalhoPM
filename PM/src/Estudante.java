@@ -48,12 +48,15 @@ public class Estudante extends Pessoa {
     public void exibirInformacoes() {
         System.out.println("Informações dos Estudantes:");
 
+        System.out.println("--------------------------------");
         for (Estudante estudante : estudantes) {
             System.out.println("Nome: " + estudante.getNome());
             System.out.println("CPF: " + estudante.getCPF());
             System.out.println("Nota: " + estudante.getNota());
             System.out.println("Matrícula: " + estudante.getMatricula());
             System.out.println("Curso: " + estudante.getCurso());
+            System.out.println("--------------------------------");
+
         }
     }
 

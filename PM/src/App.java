@@ -6,28 +6,56 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        Estudante estudante = Estudante.getestudante(); // Obter a instância única
+
         while (true) {
-            System.out.println("Digite um valor: ");
+            System.out.println("1.Matricular Estudante");
+            System.out.println("2.Exibir Estudantes");
+            System.out.println("3.Cadastrar Professor");
+            System.out.println("4.Exibir Professores");
+            System.out.println("5.Cadastrar um cliente novo");
+            System.out.println("6.Consultar Clientes");
+            System.out.println("7.Contratos do cliente");
+            System.out.println("8.Cadastrar Aluguel");
+            System.out.println("0.Encerrar Programa");
+
             int value = sc.nextInt();
 
             switch (value) {
                 case 1:
-                    Estudante estudante = Estudante.getestudante(); // Obter a instância única
-
                     estudante.matricularEstudante();
-                    estudante.exibirInformacoes();
                     break;
 
                 case 2:
+                    estudante.exibirInformacoes();
+                    break;
+
+                case 3:
                     Professor professor = Professor.cadastroprofessor();
 
                     professor.exibirInformacoes();
                     break;
 
-                case 3:
+                case 4:
                     Apresentação apresentação = new Apresentação(null);
 
                     apresentação.agendarApresentação();
+                    break;
+
+                case 5:
+                    
+                    break;
+
+                case 6:
+                    
+                    break;
+
+                case 7:
+                    
+                    break;
+
+                case 8:
+                    
                     break;
 
                 case 9:

@@ -15,16 +15,22 @@ public class Universidade extends Instituição {
         this.professores = new ArrayList<>();
     }
 
-    public static Universidade cadastropUniversidade() {
+    public static Universidade getUniversidade() {
         if (universidade == null) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Digite o nome da universidade:");
-            String nome = sc.next();
-            System.out.println("Digite o CNPJ da universidade:");
-            String cnpj = sc.next();
-            universidade = new Universidade(nome, cnpj);
-            sc.close();
+            universidade = new Universidade("", "");
         }
+        return universidade;
+    }
+
+    public Universidade cadastropUniversidade() {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o nome da universidade:");
+        String nome = sc.next();
+        System.out.println("Digite o CNPJ da universidade:");
+        String cnpj = sc.next();
+        universidade = new Universidade(nome, cnpj);
+        
         return universidade;
     }
 

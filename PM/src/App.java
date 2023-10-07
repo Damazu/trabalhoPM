@@ -6,17 +6,20 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Estudante estudante = Estudante.getestudante(); // Obter a instância única
+        Estudante estudante = Estudante.getestudante();
+        Professor professor = Professor.getProffisonal();
+        Apresentação apresentação = new Apresentação(null);
+        Universidade universidade = Universidade.getUniversidade();
 
         while (true) {
             System.out.println("1.Matricular Estudante");
             System.out.println("2.Exibir Estudantes");
             System.out.println("3.Cadastrar Professor");
             System.out.println("4.Exibir Professores");
-            System.out.println("5.Cadastrar um cliente novo");
-            System.out.println("6.Consultar Clientes");
-            System.out.println("7.Contratos do cliente");
-            System.out.println("8.Cadastrar Aluguel");
+            System.out.println("5.");
+            System.out.println("6.");
+            System.out.println("7.");
+            System.out.println("8.");
             System.out.println("0.Encerrar Programa");
 
             int value = sc.nextInt();
@@ -31,35 +34,30 @@ public class App {
                     break;
 
                 case 3:
-                    Professor professor = Professor.cadastroprofessor();
-
-                    professor.exibirInformacoes();
+                    professor.cadastroprofessor();
                     break;
 
                 case 4:
-                    Apresentação apresentação = new Apresentação(null);
-
-                    apresentação.agendarApresentação();
+                    professor.exibirInformacoes();
                     break;
 
                 case 5:
-                    
+                    apresentação.agendarApresentação();
                     break;
 
                 case 6:
-                    
+
                     break;
 
                 case 7:
-                    
+
                     break;
 
                 case 8:
-                    
+
                     break;
 
                 case 9:
-                    Universidade universidade = Universidade.cadastropUniversidade();
                     System.out.println("Nome da universidade: " + universidade.getNome());
                     break;
 

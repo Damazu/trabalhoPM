@@ -16,26 +16,30 @@ public class Professor extends Pessoa {
         this.especialidade = especialidade;
     }
 
-    public static Professor cadastroprofessor() {
+    public static Professor getProffisonal() {
         if (professor == null) {
-            Scanner sc = new Scanner(System.in);
-
-            System.out.println("Nome: ");
-            String nome = sc.nextLine();
-
-            System.out.println("CPF: ");
-            String CPF = sc.nextLine();
-
-            System.out.println("Especialidade: ");
-            String especialidade = sc.nextLine();
-
-            float salario = 1800;
-
-            professor = new Professor(nome, CPF, especialidade, salario);
-            professores.add(professor);
-
-            sc.close();
+            professor = new Professor("", "", "", 0);
         }
+        return professor;
+    }
+
+    public Professor cadastroprofessor() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Nome: ");
+        String nome = sc.nextLine();
+
+        System.out.println("CPF: ");
+        String CPF = sc.nextLine();
+
+        System.out.println("Especialidade: ");
+        String especialidade = sc.nextLine();
+
+        float salario = 1800;
+
+        professor = new Professor(nome, CPF, especialidade, salario);
+        professores.add(professor);
+
         return professor;
     }
 
@@ -48,8 +52,8 @@ public class Professor extends Pessoa {
             System.out.println("CPF: " + professor.getCPF());
             System.out.println("Especialidade: " + professor.getEspecialidade());
             System.out.println("Salario: " + professor.getSalario());
+            System.out.println("--------------------------------");
         }
-        System.out.println("--------------------------------");
     }
 
     public String getEspecialidade() {

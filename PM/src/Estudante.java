@@ -24,7 +24,7 @@ public class Estudante extends Pessoa {
         return estudante;
     }
 
-    public void matricularEstudante() {
+    public Estudante matricularEstudante() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Nome: ");
@@ -43,6 +43,8 @@ public class Estudante extends Pessoa {
 
         Estudante estudante = new Estudante(nome, cpf, nota, matricula);
         estudantes.add(estudante);
+
+        return estudante;
     }
 
     public void exibirInformacoes() {

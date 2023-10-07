@@ -33,7 +33,7 @@ public class Empresa extends Instituição {
 
         return empresa;
     }
-
+    
     public void adicionarProfissional(Profissional profissional) {
         profissionais.add(profissional);
     }

@@ -1,5 +1,7 @@
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List; // Importe a classe List
 
 public class App {
 
@@ -7,61 +9,86 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         Estudante estudante = Estudante.getestudante();
-        Professor professor = Professor.getProffisonal();
-        Apresentação apresentação = new Apresentação(null);
+        Professor professor = Professor.getProfessor();
+        Profissional profissional = Profissional.getProfissional();
         Universidade universidade = Universidade.getUniversidade();
         Empresa empresa = Empresa.getEmpresa();
+        List<Professor> listaProfessores = new ArrayList<>();
+        List<Estudante> listaEstudantes = new ArrayList<>();
 
         while (true) {
-            System.out.println("1.Matricular Estudante");
-            System.out.println("2.Exibir Estudantes");
-            System.out.println("3.Cadastrar Professor");
-            System.out.println("4.Exibir Professores");
-            System.out.println("5.");
-            System.out.println("6.");
-            System.out.println("7.");
-            System.out.println("8.Cadastrar Empresa");
-            System.out.println("9.Cadastrar Universidade");
+            System.out.println("1.Cadastros");
+            System.out.println("2.Exibição");
             System.out.println("0.Encerrar Programa");
-
+            boolean repete = true;
             int value = sc.nextInt();
 
             switch (value) {
                 case 1:
-                    estudante.matricularEstudante();
-                    break;
+                    while (repete) {
+                        System.out.println("1.Cadastro de Estudante");
+                        System.out.println("2.Cadastro Professor");
+                        System.out.println("3.Cadastro Profissional");
+                        System.out.println("4.Cdastro de Empresa");
+                        System.out.println("5.Cadastro do trabalho");
+                        System.out.println("5.Cadastro de Universidade");
+                        System.out.println("0.Voltar");
 
+                        value = sc.nextInt();
+                        switch (value) {
+                            case 1:
+                                estudante.matricularEstudante();
+                                break;
+                            case 2:
+                                professor.cadastroprofessor();
+                                break;
+                            case 3:
+                                profissional.cadastroprofissional();
+                                break;
+                            case 4:
+                                empresa.cadastrarEmpresa();
+                                break;
+                            case 5:
+                                universidade.cadastropUniversidade();
+                                break;
+                            case 6:
+                                Trabalho.cadastroTrabalho(listaProfessores,listaEstudantes);
+                                break;
+                            case 7:
+                                Apresentação.agendarApresentação();
+                                break;
+                            case 0:
+                                repete = false;
+                                break;
+                            default:
+                                System.out.println("Invalido");
+                                break;
+                        }
+                    }
                 case 2:
-                    estudante.exibirInformacoes();
-                    break;
+                    while (repete) {
+                        System.out.println("1.Exibir Estudantes");
+                        System.out.println("2.Exibir Professores");
+                        System.out.println("3.Cadastro Profissional");
+                        value = sc.nextInt();
+                        switch (value) {
+                            case 1:
+                                estudante.exibirInformacoes();
+                                break;
 
-                case 3:
-                    professor.cadastroprofessor();
-                    break;
+                            case 2:
+                                professor.exibirInformacoes();
+                                break;
 
-                case 4:
-                    professor.exibirInformacoes();
-                    break;
+                            
+                            case 0:
+                                repete = false;
+                                break;
+                            default:
+                                break;
 
-                case 5:
-                    apresentação.agendarApresentação();
-                    break;
-
-                case 6:
-
-                    break;
-
-                case 7:
-
-                    break;
-
-                case 8:
-                    empresa.cadastrarEmpresa();
-                    break;
-
-                case 9:
-                    universidade.cadastropUniversidade();
-                    break;
+                        }
+                    }
 
                 case 0:
                     System.out.println("Programa Finalizado.");

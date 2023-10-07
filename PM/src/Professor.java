@@ -16,7 +16,7 @@ public class Professor extends Pessoa {
         this.especialidade = especialidade;
     }
 
-    public static Professor getProffisonal() {
+    public static Professor getProfessor() {
         if (professor == null) {
             professor = new Professor("", "", "", 0);
         }

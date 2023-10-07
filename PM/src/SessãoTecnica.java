@@ -7,17 +7,20 @@ public class SessãoTecnica {
     private Time horaFim;
     private Sala sala;
     
-    public SessãoTecnica(Date data, Time horaInicio,Time horaFim){
-        this.data= data;
+    private static SessãoTecnica sTecnica = null;
+
+    private SessãoTecnica(Date data, Time horaInicio, Time horaFim, Sala sala) {
+        this.data = data;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
+        this.sala = sala;
     }
 
-    public Sala getSala() {
-        return sala;
-    }
-    public void setSala(Sala sala) {
-        this.sala = sala;
+    public static SessãoTecnica getTecnica(Date data, Time horaInicio, Time horaFim, Sala sala) {
+        if (sTecnica == null) {
+            sTecnica = new SessãoTecnica(data, horaInicio, horaFim, sala);
+        }
+        return sTecnica;
     }
 
     public Date getData() {
@@ -39,5 +42,12 @@ public class SessãoTecnica {
     }
     public void setHoraInicio(Time horaInicio) {
         this.horaInicio = horaInicio;
+    }
+
+    public Sala getSala() {
+        return sala;
+    }
+    public void setSala(Sala sala) {
+        this.sala = sala;
     }
 }

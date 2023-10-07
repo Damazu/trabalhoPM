@@ -10,6 +10,7 @@ public class App {
         Professor professor = Professor.getProffisonal();
         Apresentação apresentação = new Apresentação(null);
         Universidade universidade = Universidade.getUniversidade();
+        Empresa empresa = Empresa.getEmpresa();
 
         while (true) {
             System.out.println("1.Matricular Estudante");
@@ -19,7 +20,8 @@ public class App {
             System.out.println("5.");
             System.out.println("6.");
             System.out.println("7.");
-            System.out.println("8.");
+            System.out.println("8.Cadastrar Empresa");
+            System.out.println("9.Cadastrar Universidade");
             System.out.println("0.Encerrar Programa");
 
             int value = sc.nextInt();
@@ -54,11 +56,11 @@ public class App {
                     break;
 
                 case 8:
-
+                    empresa.cadastrarEmpresa();
                     break;
 
                 case 9:
-                    System.out.println("Nome da universidade: " + universidade.getNome());
+                    universidade.cadastropUniversidade();
                     break;
 
                 case 0:

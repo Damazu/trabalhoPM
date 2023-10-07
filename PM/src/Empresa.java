@@ -5,27 +5,33 @@ import java.util.Scanner;
 public class Empresa extends Instituição {
     private List<Profissional> profissionais;
 
-    private static Empresa instanciaUnica = null;
+    private static Empresa empresa = null;
 
     private Empresa(String nome, String CNPJ) {
         super(nome, CNPJ);
         this.profissionais = new ArrayList<>();
     }
 
-    public static Empresa getInstance() {
-        if (instanciaUnica == null) {
-            Scanner sc = new Scanner(System.in);
-
-            System.out.println("Digite o nome da empresa:");
-            String nome = sc.next();
-
-            System.out.println("Digite o CNPJ da empresa:");
-            String cnpj = sc.next();
-
-            instanciaUnica = new Empresa(nome, cnpj);
-            sc.close();
+    public static Empresa getEmpresa() {
+        if (empresa == null) {
+            empresa = new Empresa("", "");
         }
-        return instanciaUnica;
+        return empresa;
+    }
+
+    public Empresa cadastrarEmpresa() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite o nome da empresa:");
+        String nome = sc.next();
+
+        System.out.println("Digite o CNPJ da empresa:");
+        String cnpj = sc.next();
+
+        empresa = new Empresa(nome, cnpj);
+
+        return empresa;
     }
 
     public void adicionarProfissional(Profissional profissional) {

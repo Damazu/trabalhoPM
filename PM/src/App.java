@@ -65,10 +65,12 @@ public class App {
 
                 case 0:
                     System.out.println("Programa Finalizado.");
+                    sc.close();
                     System.exit(0); // Encerre o programa
+                    break;
 
                 default:
-                    sc.close();
+                    System.out.println("Invalido");
                     break;
             }
 
